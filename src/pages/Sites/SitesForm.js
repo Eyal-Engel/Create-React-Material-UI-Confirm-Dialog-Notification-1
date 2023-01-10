@@ -3,7 +3,7 @@ import { Grid, } from '@material-ui/core';
 import Controls from "../../components/controls/Controls";
 import { useForm, Form } from '../../components/useForm';
 import * as employeeService from "../../services/employeeService";
-
+import FileUploader from "../../components/FileUploader";
 
 const genderItems = [
     { id: 'male', title: 'Male' },
@@ -14,13 +14,9 @@ const genderItems = [
 const initialFValues = {
     id: 0,
     siteName: '',
-    image: '',
-    audioTitle: '',
-    barcode: '',
-    gender: 'male',
-    departmentId: '',
-    hireDate: new Date(),
-    isPermanent: false,
+    image: 'null',
+    audioTitle: 'null',
+    barcode: 'null',
 }
 
 export default function EmployeeForm(props) {
@@ -68,45 +64,40 @@ export default function EmployeeForm(props) {
     }, [recordForEdit])
 
     return (
-        <Form onSubmit={handleSubmit}>
+        <Form onSubmit={handleSubmit} >
             <Grid container>
-            <Grid item xs={6}>
-                <Controls.Input
-                    name="siteName"
-                    label="Site Name"
-                    value={values.siteName}
-                    onChange={handleInputChange}
-                    error={errors.siteName}
-                />
-                <Controls.Input
-                    label="image"
-                    name="image"
-                    type="file"
-                    accept="image/*"
-                    value={values.image}
-                    onChange={handleInputChange}
-                    error={errors.image}
-                />
-                <Controls.Input
-                    label="audioTitle"
-                    name="audioTitle"
-                    type="file"
-                    accept="audio/*"
-                    value={values.audioTitle}
-                    onChange={handleInputChange}
-                    error={errors.audioTitle}
-                />
-                <Controls.Input
-                    label="barcode"
-                    name="barcode"
-                    type="file"
-                    accept="image/*"
-                    value={values.barcode}
-                    onChange={handleInputChange}
-                />
+                <Grid item md={6} style={{ marginBottom: 40}}>
+                    <Controls.Input
+                        name="siteName"
+                        label="Site Name"
+                        value={values.siteName}
+                        onChange={handleInputChange}
+                        error={errors.siteName}
+                    />
                 </Grid>
-
-            
+            </Grid>
+            <Grid container>
+                <Grid item md={4} style={{ marginRight: 10}}>
+                    <h3>Image</h3>
+                    <FileUploader></FileUploader>
+                </Grid>
+                <Grid item md={4} style={{ marginRight: 10}}>
+                    <h3>Audio</h3>
+                    <FileUploader></FileUploader>
+                </Grid>
+                <Grid item md={4}>
+                <h3>QR Barcode</h3>
+                    <FileUploader></FileUploader>
+                </Grid>
+            </Grid>
+            <Grid container justify="center">
+                <Controls.Button
+                    type="submit"
+                    text="Submit" />
+                <Controls.Button
+                    text="Reset"
+                    color="default"
+                    onClick={resetForm} />
             </Grid>
         </Form>
     )

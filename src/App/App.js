@@ -7,7 +7,12 @@ import PageHeader from '../components/PageHeader';
 
 import Employees from "../pages/Employees/Employees";
 import Sites from "../pages/Sites/Sites";
-import FileUploader from "../pages/FileUploader";
+import FileUploader from "../components/FileUploader";
+import SitesForm from "../pages/Sites/SitesForm";
+import AudioUploader from "../components/AudioUploader";
+import ImageUploader from "../components/ImageUploader";
+
+
 
 
 const theme = createMuiTheme({
@@ -57,13 +62,19 @@ function App() {
         
         <Employees />
         <Sites />
-        <FileUploader />
+        {/* <FileUploader />
         <br></br>
         <br></br>
-
+        <AudioUploder></AudioUploder>
+        <br></br>
+        <br></br> */}
+        {/* <SitesForm style={{background:"Red", width: "100%"}}></SitesForm> */}
+        <AudioUploader></AudioUploader>
         <br></br>
         <br></br>
-
+        <ImageUploader></ImageUploader>
+        <br></br>
+        <br></br>
       </div>
       <CssBaseline />
     </ThemeProvider>

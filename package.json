@@ -16,6 +16,8 @@
     "jquery": "^3.6.3",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-dropzone": "^14.2.3",
+    "react-modal": "^3.16.1",
     "react-scripts": "3.4.1"
   },
   "scripts": {
