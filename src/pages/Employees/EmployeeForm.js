@@ -122,12 +122,12 @@ export default function EmployeeForm(props) {
                         value={values.hireDate}
                         onChange={handleInputChange}
                     />
-                    <Controls.Checkbox
+                    {/* <Controls.Checkbox
                         name="isPermanent"
                         label="Permanent Employee"
                         value={values.isPermanent}
                         onChange={handleInputChange}
-                    />
+                    /> */}
 
                     <div>
                         <Controls.Button

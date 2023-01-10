@@ -6,6 +6,9 @@ import Header from "../components/Header";
 import PageHeader from '../components/PageHeader';
 
 import Employees from "../pages/Employees/Employees";
+import Sites from "../pages/Sites/Sites";
+import FileUploader from "../pages/FileUploader";
+
 
 const theme = createMuiTheme({
   palette: {
@@ -53,6 +56,14 @@ function App() {
         <Header />
         
         <Employees />
+        <Sites />
+        <FileUploader />
+        <br></br>
+        <br></br>
+
+        <br></br>
+        <br></br>
+
       </div>
       <CssBaseline />
     </ThemeProvider>
